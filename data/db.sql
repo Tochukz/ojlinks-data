@@ -8,13 +8,19 @@ drop table if exists categories;
 
 create table categories(
   categoryId INT(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  category VARCHAR(30) NOT NULL
+  category VARCHAR(30) NOT NULL,
+  createdAt DATE,
+  updatedAt DATE,
+  deletedAt DATE,
 );
 
 create table subcategories(
   subcategoryId INT(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   subcategory VARCHAR(40) NOT NULL,
   categoryId INT(10) NOT NULL,
+  createdAt DATE,
+  updatedAt DATE,
+  deletedAt DATE,
   FOREIGN KEY (categoryId) REFERENCES Categories(categoryId)
 );
 
